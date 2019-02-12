@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tabletop Eliminator</title>
+    <style>
+      .player-cursor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>TTE 0.0.1</h1>
+
+    <div id="player-1" class="player-cursor">P1</div>
+    <div id="player-2" class="player-cursor">P2</div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
