@@ -13,3 +13,14 @@ socket.on("mouse move", function(mLoc) {
   el.style.left = mLoc.x + "px";
   el.style.top = mLoc.y + "px";
 });
+
+socket.on("mouse connect", function(player_id) {
+  console.log("mouse connect");
+  let el = document.createElement("div");
+  el.classList.add("player-cursor");
+  el.id = `player-${player_id}`;
+  el.innerText = `player-${player_id}`;
+  el.style.left = 0;
+  el.style.top = 0;
+  document.body.appendChild(el);
+});

@@ -20,6 +20,9 @@ let current_player_id = 0;
 io.on("connection", function(socket) {
   console.log("a user connected");
   let player_id = current_player_id++;
+
+  io.emit("mouse connect", player_id);
+
   socket.on("mouse move", function(msg) {
     console.log("mouse move: " + JSON.stringify(msg));
     msg.player_id = player_id;
