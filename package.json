@@ -11,6 +11,8 @@
   "license": "UNLICENSED",
   "dependencies": {
     "express": "^4.16.4",
+    "livereload": "^0.7.0",
+    "serve-static": "^1.13.2",
     "socketio": "^1.0.0"
   },
   "devDependencies": {

@@ -10,8 +10,8 @@ document.onmousemove = e => {
 
 socket.on("mouse move", function(mLoc) {
   let el = document.getElementById(`player-${mLoc.player_id}`);
-  el.style.left = mLoc.x + "px";
-  el.style.top = mLoc.y + "px";
+  el.style.left = mLoc.x - 30 + "px";
+  el.style.top = mLoc.y - 50 + "px";
 });
 
 socket.on("mouse connect", function(player_id) {

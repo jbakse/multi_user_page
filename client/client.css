@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
+
+html {
+  font-family: "Abel", sans-serif;
+  color: white;
+}
+body {
+  margin: 0;
+  background: #666;
+}
+
+.player-cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #00aabb;
+  border-radius: 0.4em;
+  font-size: 10px;
+  text-align: center;
+}
+
+.player-cursor:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-top-color: #00aabb;
+  border-bottom: 0;
+  margin-left: -12px;
+  margin-bottom: -12px;
+}
