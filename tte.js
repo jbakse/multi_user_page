@@ -19,20 +19,35 @@ livereloadServer.watch(__dirname + "/client");
 
 // socket server
 let io = require("socket.io")(http);
-let current_player_id = 0;
-io.on("connection", function(socket) {
-  let player_id = current_player_id++;
+let current_id = 0;
+let mice = [];
 
-  console.log(`user ${player_id} connected`);
-  io.emit("mouse connect", player_id);
+io.on("connection", function(socket) {
+  let id = current_id++;
+
+  mice[id] = {
+    id: id,
+    x: 0,
+    y: 0,
+    connected: true
+  };
+
+  io.emit("mouse connect", mice[id]);
+
+  mice.forEach(mouse => {
+    if (mouse.id != id && mouse.connected) {
+      socket.emit("mouse connect", mouse);
+    }
+  });
 
   socket.on("disconnect", function() {
-    console.log(`user ${player_id} disconnected`);
+    mice[id].connected = false;
+    io.emit("mouse disconnect", mice[id]);
   });
 
   socket.on("mouse move", function(msg) {
-    // console.log("mouse move: " + JSON.stringify(msg));
-    msg.player_id = player_id;
-    io.emit("mouse move", msg);
+    mice[id].x = msg.x;
+    mice[id].y = msg.y;
+    io.emit("mouse move", mice[id]);
   });
 });
