@@ -1,1 +1,1 @@
-web: node tte.js
+web: node index.js

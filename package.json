@@ -1,10 +1,10 @@
 {
-  "name": "tte",
+  "name": "multi-user-webpage",
   "version": "0.0.1",
-  "description": "table top eliminator",
-  "main": "tte.js",
+  "description": "multi-user-webpage demo",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon tte.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Justin Bakse",
